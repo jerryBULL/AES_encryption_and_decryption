@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background: rgba(206,239,228,1);
+}
+.box{
+    position: absolute;
+    width: 20vw;
+    
+    left: 50%;
+    transform: translate(-50%);
+}
+input{
+    width: 70%;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+}
+input:focus{
+    outline: none;
+}
+textarea{
+    width: 20vw;
+    height: 20vh;
+    resize : none;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+button{
+    width: 109%;
+    border-radius: 10px;
+    border: 0;
+    transition: 0.5s;
+}
+button:hover{
+    background: rgba(217,217,243,1);
+}
+button:focus{
+    outline: none;
+}

@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <body>
-        HELLO!!
+        <div class="box">
+            <span>密碼：</span><input type="password" id="Encrypt_pwd">
+            <p>需要加密的文字：</p><textarea id="Plaintext"></textarea> 
+            <button onclick="Encrypt()">加密</button>
+            <p>密文：</p><textarea id="Encrypt_Ciphertext"></textarea>
+            <span>密碼：</span><input type="password" id="Decrypt_pwd">
+            <p>需要解密的文字：</p><textarea id="Ciphertext"></textarea> 
+            <button onclick="Decrypt()">解密</button>
+            <p>明文：</p><textarea id="Decrypt_Plaintext"></textarea>
+        </div>
     </body>
+    <script src="aes_2.js"></script>
+    <script src="main.js"></script>
 </html>
