@@ -4,19 +4,23 @@
 }
 body{
     background: rgba(206,239,228,1);
+    width: 100vw;
+    overflow-x: hidden;
+    padding: 5vh;
 }
 .box{
     position: absolute;
-    width: 20vw;
-    
+    width: 22vw;
     left: 50%;
     transform: translate(-50%);
 }
 input{
-    width: 70%;
+    width: 22vw;
     border-radius: 10px;
     text-align: center;
     border: none;
+    height: 45px;
+    font-size: min(5vw,36px);
 }
 input:focus{
     outline: none;
@@ -27,13 +31,20 @@ textarea{
     resize : none;
     outline: none;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 5px 1vw;
+    margin: 5px 0px;
+    font-size: min(2vw,36px);
 }
 button{
-    width: 109%;
+    width: 22vw;
     border-radius: 10px;
     border: 0;
     transition: 0.5s;
+    background: rgba(244,240,230,1);
+    font-size: min(5vw,36px);
+}
+p{
+    font-size: min(5vw,36px);
 }
 button:hover{
     background: rgba(217,217,243,1);
