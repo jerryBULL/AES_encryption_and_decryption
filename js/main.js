@@ -20,21 +20,36 @@ function Decrypt(){//解密
     }
     document.getElementById("en_de_pwd").value = "";
 }
+let run = false;
 function search(){
     let name = $("#name").val();
     let pwd = $("#pwd").val();
     let find_name = $("#select_seach_name").find(":selected").val();
-    $.ajax({
-        type: "POST",
-        url: "https://script.google.com/macros/s/AKfycbwxH_A7eAA8h2XCXimNTgDtYt6FN80L6jRZThdGxl3kmuQ4oOLf/exec",
-        data: {name:name,pwd:pwd,find_name:find_name},
-        dataType: "text",
-        success: function (response) {
-            document.getElementById("ciphertext").value = response;
-        },error:function(res){
-            console.log(res);
-        }
-    });
+    if(name == "" || pwd == ""){
+        alert("請輸入完整");
+    }else if(!run){
+        run = true;
+        $("#serch_btn").text("等待回傳")
+        $.ajax({
+            type: "POST",
+            url: "https://script.google.com/macros/s/AKfycbwxH_A7eAA8h2XCXimNTgDtYt6FN80L6jRZThdGxl3kmuQ4oOLf/exec",
+            data: {name:name,pwd:pwd,find_name:find_name},
+            dataType: "text",
+            success: function (response) {
+                document.getElementById("ciphertext").value = response;
+                $("#serch_btn").text("呼叫成功")
+                setTimeout(function(){
+                    $("#serch_btn").text("搜尋")
+                    run = false;
+                },1000);
+            },error:function(res){
+                console.log(res);
+                run = false;
+            }
+        });
+    }else{
+        alert("等待API傳值");
+    }
 }
 $(document).ready(function () {
     let aes_data=12;

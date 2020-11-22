@@ -13,9 +13,7 @@ body{
     align-items: center;
     position: relative;
     width: 90vw;
-    left: 50%;
-    transform: translate(-50%);
-    margin: 3vh;
+    margin: 3vh auto;
     border: 1px solid  steelblue;
     padding: 20px;
     border-radius: 15px;
@@ -90,4 +88,34 @@ button{
 button:hover{
     background: #8abedf;
     color: aliceblue;
+}
+
+@media (max-width: 375px),(max-width: 414px) {
+    .select_box{
+        flex-direction: column;
+    }
+    .select_box input,select{
+        width: 90%;
+        margin: 10px;
+    }
+    .select_box button{
+        width: 90%;
+        font-size: 1.5rem;
+        margin: 10px;
+        padding: 0.5rem 1rem;
+        border-radius: 15px;
+    }
+    .en_and_de_box input{
+        width: 90%;
+    }
+    .text_box{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 10px;
+    }
+    textarea{
+        width: 90%;
+        margin: 10px auto;
+    }
 }
