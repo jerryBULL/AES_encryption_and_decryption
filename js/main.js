@@ -52,8 +52,15 @@ function search(){
     }
 }
 $(document).ready(function () {
-    let aes_data=12;
-    for(let i=1;i<=aes_data;i++){
-        $("#select_seach_name").append(`<option value="${i}">${i}</option>`);
-    }
+    $.ajax({
+        type: "GET",
+        url: "https://script.google.com/macros/s/AKfycbwxH_A7eAA8h2XCXimNTgDtYt6FN80L6jRZThdGxl3kmuQ4oOLf/exec",
+        dataType: "text",
+        success: function (response) {
+            let aes_data = response-1;
+            for(let i=1;i<=aes_data;i++){
+                $("#select_seach_name").append(`<option value="${i}">${i}</option>`);
+            }
+        }
+    });
 });
